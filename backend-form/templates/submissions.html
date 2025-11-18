@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Submissions{% endblock %}
+
+{% block content %}
+<div class="submissions-container">
+    <h1>Form Submissions</h1>
+    
+    {% if submissions %}
+        <div class="submissions-list">
+            {% for submission in submissions %}
+            <div class="submission-card">
+                <h3>{{ submission.name }}</h3>
+                <p class="email">{{ submission.email }}</p>
+                <p class="message">{{ submission.message }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="no-submissions">No submissions yet.</p>
+    {% endif %}
+    
+    <a href="{{ url_for('index') }}" class="back-btn">Back to Form</a>
+</div>
+{% endblock %}
