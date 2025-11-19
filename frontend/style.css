@@ -5,110 +5,66 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
 }
 
 .container {
-    max-width: 1000px;
-    margin: 0 auto;
     background: white;
-    border-radius: 20px;
     padding: 40px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-}
-
-header {
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     text-align: center;
-    margin-bottom: 40px;
-    padding-bottom: 20px;
-    border-bottom: 3px solid #667eea;
+    max-width: 700px;
+    width: 100%;
 }
 
 h1 {
     color: #2c3e50;
+    margin-bottom: 20px;
     font-size: 2.5em;
-    margin-bottom: 10px;
 }
 
 .subtitle {
-    color: #7f8c8d;
+    color: #555;
     font-size: 1.2em;
+    margin-bottom: 30px;
 }
 
-h2 {
-    color: #34495e;
-    margin-bottom: 15px;
-    font-size: 1.5em;
-}
-
-.status-section, .data-section, .image-section {
+.image-container {
     margin: 30px 0;
-}
-
-.status-box, .data-box, .image-box {
-    background: #f8f9fa;
     padding: 20px;
+    background: #f8f9fa;
     border-radius: 10px;
-    border-left: 5px solid #667eea;
 }
 
-.status-box.success {
-    border-left-color: #27ae60;
-    background: #d4edda;
-}
-
-.status-box.error {
-    border-left-color: #e74c3c;
-    background: #f8d7da;
-}
-
-.status-box.loading {
-    border-left-color: #f39c12;
-    background: #fff3cd;
-}
-
-.data-box ul {
-    list-style: none;
-    padding: 0;
-}
-
-.data-box li {
-    padding: 10px;
-    margin: 5px 0;
-    background: white;
-    border-radius: 5px;
-    border-left: 3px solid #667eea;
-}
-
-.image-box img {
+img {
     max-width: 100%;
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-footer {
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 2px solid #ecf0f1;
-    text-align: center;
-    color: #7f8c8d;
+.info {
+    margin-top: 30px;
 }
 
-.loading-spinner {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border: 3px solid #f3f3f3;
-    border-top: 3px solid #667eea;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
+.info p {
+    margin: 15px 0;
+    color: #555;
+    font-size: 18px;
 }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+.loading {
+    color: #f39c12;
+    font-style: italic;
+}
+
+.error {
+    color: #e74c3c;
 }

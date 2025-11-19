@@ -8,37 +8,23 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>🚀 MSIT 3404 DevOps Project</h1>
-            <p class="subtitle">Full-Stack Application with Docker & Kubernetes</p>
-        </header>
-
-        <div class="status-section">
-            <h2>Backend Status</h2>
-            <div id="backend-status" class="status-box loading">
-                <p>Checking backend connection...</p>
-            </div>
+        <h1>🚀 MSIT 3404 DevOps Project</h1>
+        <p class="subtitle">Full-Stack Application with Docker & Kubernetes</p>
+        
+        <div class="image-container">
+            <p class="loading" id="status">Loading image from backend...</p>
+            <img id="backend-image" src="" alt="Image from Backend" style="display: none;">
         </div>
-
-        <div class="data-section">
-            <h2>Data from Backend API</h2>
-            <div id="backend-data" class="data-box">
-                <p>Loading data...</p>
-            </div>
+        
+        <div class="info">
+            <p>✅ Frontend is running successfully!</p>
+            <p>📦 Built with HTML, CSS, JavaScript</p>
+            <p>🐳 Containerized with Docker</p>
+            <p>☸️ Deployed on Kubernetes</p>
+            <p>🔗 Image served from Flask Backend</p>
         </div>
-
-        <div class="image-section">
-            <h2>Image from Backend</h2>
-            <div id="image-container" class="image-box">
-                <p>Loading image...</p>
-            </div>
-        </div>
-
-        <footer>
-            <p>Frontend: Nginx | Backend: Flask | Orchestration: Kubernetes</p>
-        </footer>
     </div>
-
+    
     <script src="script.js"></script>
 </body>
 </html>
