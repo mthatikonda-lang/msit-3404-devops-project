@@ -1,43 +1,39 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, jsonify, send_from_directory
+from flask_cors import CORS
+import os
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for frontend to access backend
 
-# Store form submissions (in real app, use database)
-submissions = []
+@app.route('/api/status')
+def status():
+    return jsonify({
+        'status': 'healthy',
+        'service': 'backend',
+        'message': 'Backend API is running successfully!'
+    })
 
-@app.route('/')
-def index():
-    """Display the contact form"""
-    return render_template('index.html')
+@app.route('/api/data')
+def get_data():
+    return jsonify({
+        'title': 'MSIT 3404 DevOps Project',
+        'description': 'Flask Backend API',
+        'features': [
+            'RESTful API',
+            'Docker Containerized',
+            'Kubernetes Ready',
+            'Connected to Frontend'
+        ]
+    })
 
-@app.route('/submit', methods=['POST'])
-def submit():
-    """Handle form submission"""
-    name = request.form.get('name')
-    email = request.form.get('email')
-    message = request.form.get('message')
-    
-    # Store submission
-    submission = {
-        'name': name,
-        'email': email,
-        'message': message
-    }
-    submissions.append(submission)
-    
-    # Redirect to success page
-    return redirect(url_for('success', name=name))
+@app.route('/api/image')
+def get_image():
+    # Serve the image file
+    return send_from_directory('static', 'image.jpg')
 
-@app.route('/success')
-def success():
-    """Display success page"""
-    name = request.args.get('name', 'User')
-    return render_template('success.html', name=name)
-
-@app.route('/submissions')
-def view_submissions():
-    """View all form submissions"""
-    return render_template('submissions.html', submissions=submissions)
+@app.route('/health')
+def health():
+    return jsonify({'status': 'ok'}), 200
 
 if __name__ == '__main__':
-     app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
