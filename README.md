@@ -78,33 +78,32 @@ minikube service myapp-service
 # Open backend
 minikube service backend
 
-Key Components
-
-Frontend (Nginx - 4 Replicas)
+**Key Components**
+**Frontend (Nginx - 4 Replicas)**
 Image: mthatikonda/frontend:latest
 Port: 80
 NodePort: 30002
 Function: Serves web UI, acts as reverse proxy to backend
 
-Backend (Flask - 3 Replicas)
+**Backend (Flask - 3 Replicas)**
 Image: mthatikonda/backend:latest
 Port: 5000
 NodePort: 30001
 Function: Serves images via REST API
 
-Nginx Reverse Proxy
+**Nginx Reverse Proxy**
 location /api/image {
     proxy_pass http://backend:5000/image;
 }
 
-Docker Hub:
+**Docker Hub:**
 Repository: https://hub.docker.com/u/mthatikonda
 
-Images:
+**Images**:
 mthatikonda/frontend:latest
 mthatikonda/backend:latest
 
-Verification Commands:
+**Verification Commands:**
 # Check all resources
 kubectl get all
 
@@ -119,8 +118,7 @@ kubectl describe svc backend
 kubectl logs -l app=frontend
 kubectl logs -l app=backend
 
-Key Features Demonstrated
-
+**Key Features Demonstrated**
 ✅ Docker containerization
 ✅ Multi-replica deployments
 ✅ Kubernetes service discovery
