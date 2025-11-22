@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="main-body">
+    <div class="container">
+        <h1>MSIT 3404 DevOps Project</h1>
+        <h2>Containerized Web Application with Microservices Architecture</h2>
+        
+        <div class="student-info">
+            <h3>Project Team:</h3><p>Manusha Thatikonda and Karthik K</p>
+        </div>
+        
+        <div class="info-section">
+            <h3>Project Overview:</h3>
+            <p>This project demonstrates a full-stack DevOps implementation featuring containerized frontend and backend services, showcasing modern cloud-native development practices.</p>
+        </div>
+
+        <div class="info-section">
+            <h3>Technology Stack:</h3>
+            <ul>
+                <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript with nginx</li>
+                <li><strong>Backend:</strong> Flask (Python) RESTful API</li>
+                <li><strong>Containerization:</strong> Docker</li>
+                <li><strong>Orchestration:</strong> Kubernetes (Minikube)</li>
+            </ul>
+        </div>
+
+        <div class="info-section">
+            <h3>Key Features:</h3>
+            <ul>
+                <li>Microservices architecture with separate frontend and backend</li>
+                <li>RESTful API for inter-service communication</li>
+                <li>Dockerized applications for consistent deployment</li>
+                <li>Kubernetes orchestration for scalability</li>
+            </ul>
+        </div>
+
+        <button id="colorBtn">Adjust Transparency</button>
+        <p id="status"></p>
+        
+        <div class="info-note">
+<p>✨ Background image proxied from Backend Service via Kubernetes internal DNS (http://backend:5000/image)</p>        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
