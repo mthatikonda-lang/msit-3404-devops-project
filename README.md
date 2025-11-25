@@ -1,12 +1,12 @@
-MSIT 3404 DevOps Project
+**MSIT 3404 DevOps Project**
 Containerized Web Application with Microservices Architecture
-Project Team: Manusha Thatikonda and Karthik K
-Course: MSIT 3404 - DevOps
+**Project Team:** Manusha Thatikonda and Karthik K
+**Course:** MSIT 3404 - DevOps
 
-Project Overview
+**Project Overview**
 This project demonstrates a complete DevOps pipeline with containerized frontend and backend microservices, deployed on Kubernetes with proper service discovery and load balancing.
 
-Project Structure
+**Project Structure**
 msit-3404-devops-project/
 │
 ├── frontend-sample/
@@ -27,7 +27,7 @@ msit-3404-devops-project/
     ├── frontend-service.yaml
     └── backend-service.yaml
 
-Architecture
+**Architecture**
 User Browser
     ↓
 Minikube Service (Port 30002)
@@ -42,8 +42,8 @@ Backend Service (Internal DNS: http://backend:5000)
     ↓
 Backend Pods (3 replicas - Flask)
 
-Quick Start Commands:
-Part 1: Docker Build & Push
+**Quick Start Commands:
+Part 1: Docker Build & Push**
 # Build images
 docker build -t mthatikonda/backend:latest ./backend-sample
 docker build -t mthatikonda/frontend:latest ./frontend-sample
@@ -52,7 +52,7 @@ docker build -t mthatikonda/frontend:latest ./frontend-sample
 docker push mthatikonda/backend:latest
 docker push mthatikonda/frontend:latest
 
-Part 2: Kubernetes Deployment
+**Part 2: Kubernetes Deployment**
 # Start Minikube
 minikube start
 
@@ -71,7 +71,7 @@ kubectl get pods
 kubectl get svc
 kubectl get deployments
 
-Part 3: Access Services
+**Part 3: Access Services**
 # Open frontend
 minikube service myapp-service
 
